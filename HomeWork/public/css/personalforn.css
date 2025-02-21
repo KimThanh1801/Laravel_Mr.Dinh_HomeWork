@@ -101,6 +101,9 @@ h3 {
 .form-container p strong {
     color: #f5576c;
 }
+h3 b{
+    color: #333;
+}
 
 .form-container p {
     display: grid;

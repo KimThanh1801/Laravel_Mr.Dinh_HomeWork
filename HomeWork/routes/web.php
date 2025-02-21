@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,3 +13,4 @@ Route::get('/personalform', function(){
 });
 
 Route::post('/personalform', [PersonalController::class, 'display']);
+Route::get('/api', [ApiController::class, 'getData']);

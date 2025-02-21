@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{asset('css/personalforn.css')}}">
 
 </head>
-
 <body>
     <form action="{{ url('/personalform') }}" method="POST" id="form">
         @csrf
@@ -25,7 +24,6 @@
             <label for="date">Date</label>
             <input type="date" id="date" name="date" placeholder="Enter the date...">
         </div>
-
         <div class="form-group">
             <label for="phone">Phone</label>
             <input type="number" id="phone" name="phone" placeholder="Enter your phone number...">
@@ -43,23 +41,25 @@
         </div>
         @include('block.error')
     </form>
-    @if(isset($personal))
+    @if(isset($users) && count($users) > 0)
         <div class="overlap" id="overlap">
             <div class="result">
                 <button type="button" id="close-overlay" class="close-btn"
                     style="float: right; background: transparent; border: none; font-size: 20px;">
                     X
                 </button>
-                <h3>Personal Information</h3>
-                <div class="form-container">
-                    <p><strong>Name:</strong> {{ $personal['name'] }}</p>
-                    <p><strong>Age:</strong> {{ $personal['age'] }}</p>
-                    <p><strong>Date:</strong> {{ $personal['date'] }}</p>
-                    <p><strong>Phone:</strong> {{ $personal['phone'] }}</p>
-                    <p><strong>Web:</strong> {{ $personal['web'] }}</p>
-                    <p><strong>Address:</strong> {{ $personal['address'] }}</p>
-                </div>
-                
+                @foreach($users as $index => $user)
+                    <h3>Person {{ $index}}: <b>{{ $user['name'] }}</b></h3>
+                    <div class="form-container">
+                        <p><strong>Name:</strong> {{ $user['name'] }}</p>
+                        <p><strong>Age:</strong> {{ $user['age'] }}</p>
+                        <p><strong>Date:</strong> {{ $user['date'] }}</p>
+                        <p><strong>Phone:</strong> {{ $user['phone'] }}</p>
+                        <p><strong>Web:</strong> {{ $user['web'] }}</p>
+                        <p><strong>Address:</strong> {{ $user['address'] }}</p>
+                    </div>
+                @endforeach
+
             </div>
         </div>
     @endif
