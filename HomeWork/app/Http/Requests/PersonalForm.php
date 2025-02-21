@@ -33,6 +33,7 @@ class PersonalForm extends FormRequest
     public function messages(){
         return [
             'name.string' => 'Please fill in your name here...',
+            'name.required' => 'Please fill in your name here...',
             'age.numeric' => 'Please enter your age...',
             'date.string' => 'Please enter your date of birth...',
             'phone.numeric' => 'Please check if it is correct...',
