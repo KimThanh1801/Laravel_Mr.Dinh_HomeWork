@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        table,th,tr td{
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        td{
+            background-color: #ffc0cb;
+        }
+    </style>
 </head>
 
 <body>
